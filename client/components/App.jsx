@@ -3,30 +3,22 @@ import React from 'react'
 import getPeople from '../api'
 
 class App extends React.Component {
-  // state = {
-  //   people: []
-  // }
-
-  // componentDidMount () {
-  //   getPeople()
-  //     .then(people => {
-  //       this.setState({
-  //         people: people
-  //       })
-  //     })
-  // }
+  state = {
+    people: []
+  }
 
   handleClick = () => {
     getPeople()
-    // const people = this.state.people
-
-    // this.setState({
-    //   people
-    // })
+      .then(
+        people => {
+          this.setState({ people: people })
+          // console.log(people)
+        }
+      )
   }
 
   render () {
-    // const { people } = this.state
+    console.log(this.state.people[0])
 
     return (
       < React.Fragment >
@@ -34,6 +26,9 @@ class App extends React.Component {
         <button onClick={this.handleClick}>
           Star Wars Characters!!
         </button>
+        <p>
+          {/* {this.state.people[0]} */}
+        </p>
       </React.Fragment >
     )
   }

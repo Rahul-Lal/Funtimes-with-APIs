@@ -6,6 +6,7 @@ function getPeople () {
   return request.get(swapiURL)
     .then(res => {
       console.log(res.body.results)
+      return res.body.results
     })
 }
 
